@@ -1,0 +1,21 @@
+<div class="formGroup">
+  <form [formGroup]="createdForm" (ngSubmit)="logPerson()">
+    <ul class="col-md-6 offset-md-3">
+      <li class="form-group">
+        <label>First Name</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </li>
+      <li class="form-group">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastname" class="form-control" />
+      </li>
+      <li class="form-group">
+        <label>Country</label>
+        <input type="text" formControlName="country" class="form-control" />
+      </li>
+
+        <button class="btn btn-primary" type="button" (click)="logPeson()">Add New Person</button>
+      </li>
+    </ul>
+  </form>
+</div>
