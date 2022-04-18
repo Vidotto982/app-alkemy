@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login',
@@ -7,10 +8,9 @@ import { FormGroup } from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private createdForm: FormGroup | any;
+  createdForm: FormGroup | any;
 
-  constructor(private formBuilder: FormBuilder,
-              private snackBar: MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.createdForm = this.formBuilder.group({
@@ -24,4 +24,5 @@ export class LoginComponent implements OnInit {
   logPerson(){
 
   }
+
 }

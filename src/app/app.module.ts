@@ -8,7 +8,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
-
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +25,11 @@ import { LoginComponent } from './login/login.component';
     MatSidenavModule,
     MatFormFieldModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatIconModule,
+    MatSnackBarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
