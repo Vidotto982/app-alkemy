@@ -2,9 +2,10 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+
 }
-.title{
+.btn-logOut{
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -14,4 +15,8 @@
   margin-top: 5%;
   height: 15%;
   width: 15%;
+}
+nav{
+  display: flex;
+
 }
