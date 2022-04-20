@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
 import {LoginService} from "../services/login-service.";
+import {MenuService} from "../services/menu.service";
 
 @Component({
   selector: 'app-home',
@@ -10,14 +10,16 @@ import {LoginService} from "../services/login-service.";
 export class HomeComponent implements OnInit {
 
 
-  constructor(  private service: LoginService,
-
+  constructor(  private loginService: LoginService,
+                private menuService:  MenuService,
   ) {}
 
   ngOnInit(): void {
   }
-
+getMenus(){
+    this.menuService.getMenu();
+}
   logOut() {
-    this.service.logOut();
+    this.loginService.logOut();
   }
 }
