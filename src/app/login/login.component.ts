@@ -1,27 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { MatSnackBar } from "@angular/material/snack-bar";
+import {LoginService} from "../services/login-service.";
+import {Login} from "../models/login.interface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   createdForm: FormGroup | any;
-
-  constructor(private formBuilder: FormBuilder) { }
-
+  login : Login [] = [];
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private service: LoginService ) { }
+  email: string | undefined;
+  password: string | undefined;
   ngOnInit(): void {
     this.createdForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      pass: [ '', [Validators.required]
+      email: ['', [Validators.required]],
+      password: [ '', [Validators.required]
       ]
     })
   }
 
-  logPerson(){
-
+  logIn(res: any){
+    localStorage.setItem("Token", res.token)
   }
 
+  submit() {
+    console.log("entro")
+    this.service.loginUser(this.createdForm.getRawValue())
+      .subscribe(r => {
+        console.log(r)
+          this.router.navigate(['/home']);
+         this.service.addToken(r);
+        },
+      error => {
+      console.log("error");
+      });
+  }
 }

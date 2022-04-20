@@ -1,16 +1,14 @@
 <div class="container">
   <div class="mat-card-title">
     <div class="title">
-      <h3> Bienvenidx!</h3>
+      <h3> Bienvenido/a!</h3>
       <p> Para ver el menu, primero se tiene que logear. </p>
       <span>Debe hacer click en el siguiente boton!</span>
-      <nav>
-        <button>
-          <a routerLink="/login" class="btn btn-primary">
-            Login
-          </a>
-        </button>
-      </nav>
+
+      <mat-card>
+      <app-login></app-login>
+      </mat-card>
+      <button mat-raised-button (ngClick)="logOut()"> logOut</button>
     </div>
   </div>
 </div>
