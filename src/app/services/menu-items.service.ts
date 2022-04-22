@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 
 export class MenuItemsService {
 
-  readonly url: string = 'https://api.spoonacular.com/food/menuItems?apiKey=1caf57283f0b48dbb252d6a4ce3473a2'
+  readonly url: string = '/api/food/menuItems/search?query=a&apiKey=3a646553158c46b7b94fe9159da4a04e'
   res: any;
   constructor(private http: HttpClient,
   ) {
