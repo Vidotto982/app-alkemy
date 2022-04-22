@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../services/login-service.";
-import {MenuService} from "../services/menu.service";
+import {MenuItemsService} from "../services/menu-items.service";
+import { MenuItems, } from "../models/menu-items.interface";
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,30 @@ import {MenuService} from "../services/menu.service";
 })
 export class HomeComponent implements OnInit {
 
-
-  constructor(  private loginService: LoginService,
-                private menuService:  MenuService,
-  ) {}
+  menu: MenuItems[] = [];
+  constructor(private loginService: LoginService,
+              public menuService: MenuItemsService,
+  ) {
+  }
 
   ngOnInit(): void {
+    this.getMenus();
   }
-getMenus(){
-    this.menuService.getMenu();
-}
+
+  getMenus() {
+    this.menuService.getMenu().subscribe((res: any) => this.menu = res.menuItems);
+
+  }
+
   logOut() {
     this.loginService.logOut();
+  }
+
+  deleteMenu(menu: MenuItems): void {
+    console.log(menu)
+    this.menuService.deleteMenu(menu.id).subscribe((resp: any) => {
+        this.getMenus();
+      }
+    );
   }
 }

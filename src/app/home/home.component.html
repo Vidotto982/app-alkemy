@@ -1,24 +1,30 @@
 <div class="container">
-  <nav>
-  <div class="mat-card-title">
-  </div>
-  <mat-card>
-    <mat-card-title>
-      <span > Lista de Menu</span>
-    </mat-card-title>
-  </mat-card>
-    <div class="btn-logOut">
-      <button  class="btn-logOut" mat-raised-button (click)="logOut()"> logOut</button>
-    </div>
+  <nav class="nav">
+    <mat-card>
+      <mat-card-title>
+        <span> Lista de Menu</span>
+      </mat-card-title>
+    </mat-card>
+    <button class="btn-logOut" mat-raised-button (click)="logOut()"> logOut</button>
   </nav>
-</div>
-<div class="row text-center ">
-  <div class=" person-ul-div">
-    <mat-card-content >
-      <ul class="person-group  mt-2">
-      </ul>
-    </mat-card-content>
-  </div>
-  <div class="formGroup">
+  <div class="row text-center ">
+    <div class=" person-ul-div">
+      <!--      AL HACER CLICK EN EDITAR QUE APAREZCA UN MODAL QUE LO COMPONENTE EDITAR  -->
+      <mat-card-content *ngFor="let menu of menu">
+        <ul class="person-group  mt-2">
+          <mat-card>
+            <span>{{menu.name}}
+            </span>
+            <button mat-button  type="button" class="btn-danger" (click)="deleteMenu(menu)">
+              <mat-icon color="error">
+                delete_outline
+              </mat-icon>
+            </button>
+          </mat-card>
+        </ul>
+      </mat-card-content>
+    </div>
+    <div class="formGroup">
+    </div>
   </div>
 </div>

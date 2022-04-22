@@ -1,16 +1,8 @@
 .container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
+  max-width: 1200px;
+  margin-inline: auto;
+}
 
-}
-.btn-logOut{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  align-items: center
-}
 .botLogin{
   margin-top: 5%;
   height: 15%;
@@ -18,5 +10,5 @@
 }
 nav{
   display: flex;
-
+  justify-content: space-between;
 }

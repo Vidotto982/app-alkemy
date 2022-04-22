@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../services/login-service.";
 import {Login} from "../models/login.interface";
 import {Router} from "@angular/router";
@@ -11,34 +11,37 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   createdForm: FormGroup | any;
-  login : Login [] = [];
+  login: Login [] = [];
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private service: LoginService ) { }
+              private service: LoginService) {
+  }
+
   email: string | undefined;
   password: string | undefined;
+
   ngOnInit(): void {
     this.createdForm = this.formBuilder.group({
       email: ['', [Validators.required]],
-      password: [ '', [Validators.required]
+      password: ['', [Validators.required]
       ]
     })
   }
 
-  logIn(res: any){
+  logIn(res: any) {
     localStorage.setItem("Token", res.token)
   }
 
   submit() {
-    console.log("entro")
     this.service.loginUser(this.createdForm.getRawValue())
       .subscribe(r => {
-        console.log(r)
+          console.log(r)
           this.router.navigate(['/home']);
-         this.service.addToken(r);
+          this.service.addToken(r);
         },
-      error => {
-      console.log("error");
-      });
+        error => {
+          console.log("error");
+        });
   }
 }
