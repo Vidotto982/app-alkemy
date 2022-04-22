@@ -1,6 +1,6 @@
 export interface MenuItems {
   id: number;
-  tile: string;
+  title: string;
   image: string;
   imageType: string;
   restaurantChain: string;
