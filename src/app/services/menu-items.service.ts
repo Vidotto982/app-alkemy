@@ -13,8 +13,6 @@ export class MenuItemsService {
   constructor(private http: HttpClient,
   ) {
 
-
-    this.getMenu().subscribe((res: any) => {console.log(res); this.res = res; })
   }
 
   getMenu(): any {
