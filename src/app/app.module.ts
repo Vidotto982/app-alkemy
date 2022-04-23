@@ -16,13 +16,15 @@ import { MatInputModule } from "@angular/material/input";
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
 import {AuthGuardService} from "./interceptors/interceptor.service";
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import {AuthGuardService} from "./interceptors/interceptor.service";
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

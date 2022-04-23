@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../services/login-service.";
 import {MenuItemsService} from "../services/menu-items.service";
-import { MenuItems, } from "../models/menu-items.interface";
+import {MenuItems,} from "../models/menu-items.interface";
+import {MenuService} from "../services/menu.service";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,9 @@ import { MenuItems, } from "../models/menu-items.interface";
 export class HomeComponent implements OnInit {
 
   menu: MenuItems[] = [];
+
   constructor(private loginService: LoginService,
+              private platoService: MenuService,
               public menuService: MenuItemsService,
   ) {
   }
@@ -22,7 +25,6 @@ export class HomeComponent implements OnInit {
 
   getMenus() {
     this.menuService.getMenu().subscribe((res: any) => this.menu = res.menuItems);
-
   }
 
   logOut() {
@@ -36,4 +38,10 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+  addPlato(event: boolean, menuItem: MenuItems)  {
+    if(event == true){
+    this.platoService.addPlato(menuItem);
+    }
+   }
 }

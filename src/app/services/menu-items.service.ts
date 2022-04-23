@@ -14,7 +14,6 @@ export class MenuItemsService {
   ) {
 
   }
-
   getMenu(): any {
     let header = new HttpHeaders().set('Type-content', 'application/json').set('Access-Control-Allow-Origin','*').set('Access-Control-Allow-Methods','*')
     return this.http.get(this.url,{headers: header})
@@ -23,5 +22,9 @@ export class MenuItemsService {
   deleteMenu(id: any): Observable<{}> {
     const ulrMenu = `${this.url}/${id}/{access}`;
     return this.http.delete(ulrMenu);
+  }
+
+  addPlatos() {
+
   }
 }
