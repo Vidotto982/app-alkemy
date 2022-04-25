@@ -4,7 +4,6 @@
     <mat-card-content *ngFor="let menuItem of listMenu">
       <ul class="item-list mt-2">
         <mat-card class="card-item-menu">
-          <div>
             <ul>
               <li> Nombre del Plato:
                 <h3>{{menuItem.title}}</h3>
@@ -13,9 +12,8 @@
                 <h4>{{menuItem.restaurantChain}} </h4>
               </li>
             </ul>
-          </div>
           <div>
-            <img src={{menuItem.image}}>
+            <img class="img-item" src={{menuItem.image}}>
           </div>
         </mat-card>
       </ul>

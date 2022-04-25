@@ -6,7 +6,7 @@ import {AuthGuardService} from "./interceptors/interceptor.service";
 import {MenuComponent} from "./menu/menu.component";
 const routes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: []},
-  {path: 'menu', component: MenuComponent, canActivate: []},
+  {path: 'mis-platos', component: MenuComponent, canActivate: []},
   {path: '', component: HomeComponent, canActivate: [AuthGuardService],
     children:[
       {path: 'home', component: HomeComponent, canActivate: []},

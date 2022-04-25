@@ -8,19 +8,30 @@
 }
 
 .items-tabla {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-between;
   margin-top: 20px;
 }
 ul {
+  display: flex;
   text-align: center;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .card-item-menu {
+  width: 20%;
+  height: 20%;
   text-align: center;
 
   background-color: rgb(255 255 255 / 10%);
 }
-.img-card{
+.img-item{
+  text-align: center;
   margin-left: 70px;
+  width: 70%;
 }
 
 .btn-ver-platos {
