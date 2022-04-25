@@ -24,7 +24,4 @@ export class MenuItemsService {
     return this.http.delete(ulrMenu);
   }
 
-  addPlatos() {
-
-  }
 }

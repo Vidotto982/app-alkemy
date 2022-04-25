@@ -1,21 +1,21 @@
-<div class="cdk-overlay-container">
-<div class="formGroup formLogin">
-  <mat-card class="cardLogin">
-    <form [formGroup]="createdForm">
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput type="text" formControlName="email"/>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password"/>
-        </mat-form-field>
-      </div>
-    </form>
-    <button mat-raised-button class="btn btn-primary" type="submit" (click)="submit()">Sing In</button>
-  </mat-card>
-</div>
+<div class="container">
+  <div class="formGroup formLogin">
+    <mat-card class="cardLogin">
+      <form [formGroup]="createdForm">
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="email"/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password"/>
+          </mat-form-field>
+        </div>
+      </form>
+      <button mat-raised-button class="btn btn-primary" type="submit" (click)="submit()">Sing In</button>
+    </mat-card>
+  </div>
 </div>

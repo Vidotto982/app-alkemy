@@ -17,5 +17,9 @@ export class MenuService {
   addPlato(menu: MenuItems) {
     this.listMenu.push(menu);
   }
+
+  getPlatos() {
+    return this.listMenu;
+  }
 }
 

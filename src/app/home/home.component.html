@@ -1,20 +1,37 @@
 <div class="container">
   <nav class="nav">
     <mat-card class="card-menu-list">
-        <p> Lista de Menu</p>
+      <p> Lista de Menu</p>
     </mat-card>
-    <button mat-raised-button class="btn-ver-platos" routerLink="/menu"> <p>Ver mis Platos </p>
+    <button mat-raised-button class="btn-ver-platos" routerLink="/mis-platos"><p>Ver mis Platos </p>
     </button>
-      <button class="btn-logOut" mat-raised-button (click)="logOut()"> logOut</button>
+    <button class="btn-logOut" mat-raised-button (click)="logOut()"> log Out
+      <mat-icon>
+        account_box
+      </mat-icon></button>
   </nav>
   <div class="row text-center items-tabla ">
-    <div class=" person-ul-div">
-      <mat-card-content *ngFor="let menuItem of menu">
+    <div>
+      <mat-card-content class="card-item-menu" *ngFor="let menuItem of menu">
         <ul class="item-list mt-2">
-          <mat-card>
-            <span>{{menuItem.title}}</span>
+          <mat-card class="card-item-menu">
+            <ul>
+              <li>
+                <h3>Nombre:</h3>
+              </li>
+              <h2>{{menuItem.title}}</h2>
+              <li>
+                <h4>Restaurante:</h4>
+              </li>
+              <h3>{{menuItem.restaurantChain}}</h3>
+
+            </ul>
+            <div>
+              <img class="img-card" src="{{menuItem.image}}">
+            </div>
             <div class="option-item">
-              <mat-checkbox class="example-margin checkbox-item" (change)="addPlato($event.checked, menuItem)"></mat-checkbox>
+              <mat-checkbox class="example-margin checkbox-item"
+                            (change)="addPlato($event.checked, menuItem)"></mat-checkbox>
               <button mat-button type="button" class="btn-danger" (click)="deleteMenu(menuItem)">
                 <mat-icon color="error">
                   delete_outline

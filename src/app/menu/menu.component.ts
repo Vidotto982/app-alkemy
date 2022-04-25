@@ -9,12 +9,13 @@ import {MenuService} from "../services/menu.service";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+  public listMenu: MenuItems[] = [];
   constructor( private menu : MenuService,
 
   ) { }
 
   ngOnInit(): void {
+    this.listMenu = this.menu.getPlatos()
   }
 
 }
