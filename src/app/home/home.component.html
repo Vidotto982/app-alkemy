@@ -13,30 +13,34 @@
   </nav>
   <div class="row text-center items-tabla ">
     <mat-card-content class="card-item-menu" *ngFor="let menuItem of menu">
-      <mat-card class="card-item-menu">
-        <ul>
-          <li>
-            <h3>Nombre:</h3>
-          </li>
-          <h2>{{menuItem.title}}</h2>
-          <li>
-            <h4>Restaurante:</h4>
-          </li>
-          <h3>{{menuItem.restaurantChain}}</h3>
-          <li>
+      <div class="div-ul-item">
+        <ul class="ul-item">
+          <div class="div-item-list">
+            <li class="li-item">
+              <h3>Nombre:</h3>
+              <h2>{{menuItem.title}}</h2>
+            </li>
+          </div>
+          <div class="div-item-list">
+            <li class="li-item">
+              <h4>Restaurante:</h4>
+              <h3>{{menuItem.restaurantChain}}</h3>
+            </li>
+          </div>
+          <div class="div-img-item">
             <img class="img-item" src="{{menuItem.image}}">
-          </li>
+          </div>
         </ul>
-        <div class="option-item">
-          <mat-checkbox class="example-margin checkbox-item"
-                        (change)="addPlato($event.checked, menuItem)"></mat-checkbox>
-          <button mat-button type="button" class="btn-danger" (click)="deleteMenu(menuItem)">
-            <mat-icon color="error">
-              delete_outline
-            </mat-icon>
-          </button>
-        </div>
-      </mat-card>
+      </div>
+      <div class="option-item">
+        <mat-checkbox class="example-margin checkbox-item"
+                      (change)="addPlato($event.checked, menuItem)"></mat-checkbox>
+        <button mat-button type="button" class="btn-danger" (click)="deleteMenu(menuItem)">
+          <mat-icon color="error">
+            delete_outline
+          </mat-icon>
+        </button>
+      </div>
     </mat-card-content>
   </div>
 </div>
