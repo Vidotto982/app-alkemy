@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 
 export class MenuItemsService {
 
-  readonly url: string = '/api/food/menuItems/search?query=a&apiKey=97c488a1b31d445094996b735420fb40'
+  readonly url: string = '/api/food/menuItems/search?query=a&apiKey=823d60a4694c49a6ad91a822f6b1ea90'
   res: any;
   constructor(private http: HttpClient,
   ) {

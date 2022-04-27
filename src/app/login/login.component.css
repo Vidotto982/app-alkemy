@@ -1,5 +1,6 @@
-.formLogin{
-  margin-top: 20px;
+.formLogin {
+  min-height: calc(100vh - 16px);
+  background: linear-gradient(90deg, rgba(130, 112, 255, 0.67) 0%, rgba(71, 165, 196, 0.87) 56%, rgba(0, 212, 255, 1) 100%);
   display: flex;
   align-content: flex-start;
   justify-content: space-evenly;
@@ -7,19 +8,26 @@
   flex-direction: column;
   align-items: center;
 }
-.cardLogin{
+
+.cardLogin {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: flex-end;
   flex-wrap: wrap;
+  margin-top: 16px;
+  padding: 32px;
 }
-.img-item{
+
+.img-item {
   width: 40%;
 }
-.loading{
+
+.loading {
   text-align: center;
 }
-.span-login{
+
+h3.title-login {
+  margin: 32px 0;
   text-align: center;
 }

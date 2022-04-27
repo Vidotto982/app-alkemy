@@ -10,7 +10,6 @@ import {MenuService} from "../services/menu.service";
 })
 export class MenuComponent implements OnInit {
   public listMenu: MenuItems[] = [];
-
   constructor(private menu: MenuService,
   ) {
   }
@@ -20,11 +19,7 @@ export class MenuComponent implements OnInit {
   }
 
   deleteMenu(menuItem: MenuItems) {
-    for (let i = 0; i < this.listMenu.length; i++) {
-    if (menuItem.name == menuItem.name) {
-      this.listMenu.splice(i,1);
-     }
-    }
-
+    this.listMenu = this.listMenu.filter(menu => menu != menuItem);
   }
+
 }
