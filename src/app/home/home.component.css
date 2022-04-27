@@ -22,6 +22,7 @@
   height: auto;
   width: auto;
   text-align: center;
+  flex-direction: column;
 }
 
 .div-img-item {

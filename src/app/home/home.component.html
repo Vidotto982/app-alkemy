@@ -1,6 +1,5 @@
 <div class="container">
   <nav class="nav">
-
     <button mat-raised-button class="btn-ver-platos" routerLink="/mis-platos"><p>Ver mis Platos </p>
     </button>
     <button class="btn-logOut" mat-raised-button (click)="logOut()"> log Out
@@ -13,6 +12,9 @@
     <mat-card class="card-menu-list">
       <p> Lista de Menu</p>
     </mat-card>
+    <div *ngIf="!menu.length" class="loading ">
+      <mat-spinner></mat-spinner>
+    </div>
   </div>
   <div class="items-tabla">
     <mat-card-content class="card-item-menu" *ngFor="let menuItem of menu">
@@ -20,11 +22,6 @@
         <div class="option-item">
           <mat-checkbox class="example-margin checkbox-item"
                         (change)="addPlato($event.checked, menuItem)"></mat-checkbox>
-          <button mat-button type="button" class="btn-danger" (click)="deleteMenu(menuItem)">
-            <mat-icon color="error">
-              delete_outline
-            </mat-icon>
-          </button>
         </div>
         <ul class="ul-item">
           <div class="div-item-list">

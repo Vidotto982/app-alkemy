@@ -4,6 +4,11 @@
     <mat-card-content class="card-item-menu" *ngFor="let menuItem of listMenu">
       <div class="div-ul-item">
         <ul class="ul-item">
+          <button mat-button type="button" class="btn-danger" (click)="deleteMenu(menuItem)">
+            <mat-icon color="error">
+              delete_outline
+            </mat-icon>
+          </button>
           <div class="div-item-list">
             <li class="li-item">
               <h3>Nombre:</h3>

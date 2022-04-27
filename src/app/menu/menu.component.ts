@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs";
 import {MenuItems} from "../models/menu-items.interface";
 import {MenuService} from "../services/menu.service";
@@ -10,12 +10,21 @@ import {MenuService} from "../services/menu.service";
 })
 export class MenuComponent implements OnInit {
   public listMenu: MenuItems[] = [];
-  constructor( private menu : MenuService,
 
-  ) { }
+  constructor(private menu: MenuService,
+  ) {
+  }
 
   ngOnInit(): void {
     this.listMenu = this.menu.getPlatos()
   }
 
+  deleteMenu(menuItem: MenuItems) {
+    for (let i = 0; i < this.listMenu.length; i++) {
+    if (menuItem.name == menuItem.name) {
+      this.listMenu.splice(i,1);
+     }
+    }
+
+  }
 }

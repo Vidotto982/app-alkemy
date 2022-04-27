@@ -3,15 +3,16 @@ import {LoginService} from "../services/login-service.";
 import {MenuItemsService} from "../services/menu-items.service";
 import {MenuItems,} from "../models/menu-items.interface";
 import {MenuService} from "../services/menu.service";
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  value: number | undefined;
   menu: MenuItems[] = [];
+  loading: any;
+  platos: MenuItems[] = [];
 
   constructor(private loginService: LoginService,
               private platoService: MenuService,
@@ -29,14 +30,6 @@ export class HomeComponent implements OnInit {
 
   logOut() {
     this.loginService.logOut();
-  }
-
-  deleteMenu(menu: MenuItems): void {
-    console.log(menu)
-    this.menuService.deleteMenu(menu.id).subscribe((resp: any) => {
-        this.getMenus();
-      }
-    );
   }
 
   addPlato(event: boolean, menuItem: MenuItems)  {
