@@ -1,22 +1,26 @@
 <div class="container">
   <button mat-raised-button class="btn-ver-platos" routerLink="/home"><p>Ver listado de Platos!</p></button>
-  <div class="table">
-    <mat-card-content *ngFor="let menuItem of listMenu">
-      <ul class="item-list mt-2">
-        <mat-card class="card-item-menu">
-            <ul>
-              <li> Nombre del Plato:
-                <h3>{{menuItem.title}}</h3>
-              </li>
-              <li> Nombre del Restaurante que lo cocina :
-                <h4>{{menuItem.restaurantChain}} </h4>
-              </li>
-            </ul>
-          <div>
-            <img class="img-item" src={{menuItem.image}}>
+  <div class="items-tabla">
+    <mat-card-content class="card-item-menu" *ngFor="let menuItem of listMenu">
+      <div class="div-ul-item">
+        <ul class="ul-item">
+          <div class="div-item-list">
+            <li class="li-item">
+              <h3>Nombre:</h3>
+              <h2>{{menuItem.title}}</h2>
+            </li>
           </div>
-        </mat-card>
-      </ul>
+          <div class="div-item-list">
+            <li class="li-item">
+              <h4>Restaurante:</h4>
+              <h3>{{menuItem.restaurantChain}}</h3>
+            </li>
+          </div>
+          <div class="div-img-item">
+            <img class="img-item" src="{{menuItem.image}}">
+          </div>
+        </ul>
+      </div>
     </mat-card-content>
   </div>
 </div>
