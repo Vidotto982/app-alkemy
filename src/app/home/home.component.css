@@ -4,7 +4,9 @@
   margin-inline: auto;
   background: linear-gradient(90deg, rgba(130, 112, 255, 0.67) 0%, rgba(71, 165, 196, 0.87) 56%, rgba(0, 212, 255, 1) 100%);
 }
-
+.input-search{
+  width: 400px;
+}
 .items-tabla {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));

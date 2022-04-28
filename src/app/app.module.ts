@@ -19,7 +19,8 @@ import { AuthGuardService } from "./interceptors/interceptor.service";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MenuComponent } from './menu/menu.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {  MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,

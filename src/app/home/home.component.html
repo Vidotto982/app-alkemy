@@ -2,6 +2,16 @@
   <nav class="nav">
     <button mat-raised-button class="btn-ver-platos" routerLink="/mis-platos"><p>Ver mis Platos </p>
     </button>
+    <mat-form-field class="input-search" appearance="fill">
+      <mat-label>Escriba el plato que está buscando</mat-label>
+      <input matInput type="text"  [(ngModel)]="clear" [(ngModel)]="searchName">
+      <button *ngIf="clear" matSuffix mat-icon-button aria-label="Clear" (click)="search(searchName)">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button *ngIf="clear" matSuffix mat-icon-button aria-label="Clear" (click)="clear=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
     <button class="btn-logOut" mat-raised-button (click)="logOut()"> log Out
       <mat-icon>
         account_box
