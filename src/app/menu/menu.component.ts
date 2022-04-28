@@ -9,17 +9,19 @@ import {MenuService} from "../services/menu.service";
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  public listMenu: MenuItems[] = [];
-  constructor(private menu: MenuService,
+  listMenu: MenuItems[] = [];
+
+  constructor(private menuService: MenuService,
   ) {
   }
 
   ngOnInit(): void {
-    this.listMenu = this.menu.getPlatos()
+    this.listMenu = this.menuService.getPlatos();
   }
 
   deleteMenu(menuItem: MenuItems) {
-    this.listMenu = this.listMenu.filter(menu => menu != menuItem);
+    this.menuService.deletePlato(menuItem);
+    this.listMenu = this.menuService.getPlatos();
   }
 
 }

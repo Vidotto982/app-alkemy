@@ -25,29 +25,26 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMenus();
+    this.getMenus(this.searchName);
   }
 
-  getMenus() {
-    this.menuService.getMenu().subscribe((res: any) => this.menu = res.menuItems);
+  getMenus(searchName: string) {
+    if(!searchName){
+       searchName = 'a'
+       this.menuService.getMenu(searchName).subscribe((res: any) => this.menu = res.menuItems);
+    }else {
+      this.menuService.getMenu(searchName).subscribe((res: any) => this.menu = res.menuItems);
+    }
   }
+
 
   logOut() {
     this.loginService.logOut();
   }
 
   addPlato(event: boolean, menuItem: MenuItems)  {
-    if(event == true){
+    if (!event) return;
     this.platoService.addPlato(menuItem);
-    }
-   }
 
-  search(searchName: string) {
-    const clicks = fromEvent(document, 'click');
-    const result = clicks.pipe(
-      scan(i => ++i, searchName.length),
-      debounce(i => interval(200 * i))
-    )
-    result.subscribe(res => console.log(searchName));
   }
 }

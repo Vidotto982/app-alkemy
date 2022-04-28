@@ -5,7 +5,7 @@
     <mat-form-field class="input-search" appearance="fill">
       <mat-label>Escriba el plato que está buscando</mat-label>
       <input matInput type="text"  [(ngModel)]="clear" [(ngModel)]="searchName">
-      <button *ngIf="clear" matSuffix mat-icon-button aria-label="Clear" (click)="search(searchName)">
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="getMenus(searchName)">
         <mat-icon>search</mat-icon>
       </button>
       <button *ngIf="clear" matSuffix mat-icon-button aria-label="Clear" (click)="clear=''">

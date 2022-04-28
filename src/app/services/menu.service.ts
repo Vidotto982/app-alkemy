@@ -15,11 +15,20 @@ export class MenuService {
   }
 
   addPlato(menu: MenuItems) {
-    this.listMenu.push(menu);
+    const exitEl = this.listMenu.some(item => item === menu);
+    if (!exitEl) {
+      this.listMenu.push(menu);
+    }
   }
 
   getPlatos() {
     return this.listMenu;
+  }
+
+  deletePlato(menuItem: MenuItems){
+    this.listMenu = this.listMenu.filter(menu => menu != menuItem);
+    this.getPlatos();
+
   }
 }
 
